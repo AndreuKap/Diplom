@@ -1,0 +1,75 @@
+.cvetblog{
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #aa862e;
+}
+
+.blog{
+    margin-top: 20px;
+    position: relative;
+
+
+}
+
+.blog-1{
+    font-size: 20px;
+}
+
+.block_1{
+    width: 300px;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.basa{
+    margin-top: 85px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+footer{
+    width: 98%;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 50px;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+.b1{
+    width: 68%;
+    display: inline;
+    float: left;
+}
+
+.b2{
+    display: inline;
+    width: 30%;
+    float: right;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+    .b2{
+        display: inline;
+        width: 100%;
+        float: right;
+        margin-left: 10px;
+    }
+
+}
+
+.lind_del{
+color: #aa862e;
+ height: 0.75pt;
+}
+
+.table1{
+    margin-top: 15px;
+    margin-bottom: 150px;
+}

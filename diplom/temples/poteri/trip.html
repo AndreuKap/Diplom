@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block title %}Аналіз магнітних знімків Трипільських поселень{% endblock %}
+
+
+{% block content %}
+
+
+<div class="b1" >
+    <form id="imageUploadForm" enctype="multipart/form-data">
+        
+        <label class="input-file">
+            <input   type="file" name="image" id="imageInput" accept="image/*">
+             <span class="forma_button input-file-btn">Оберіть файл</span>           
+            <span class="input-file-text">Максимум 1мб</span>
+      </label>
+    
+     <script>
+        $('.input-file input[type=file]').on('change', function(){
+        let file = this.files[0];
+        $(this).closest('.input-file').find('.input-file-text').html(file.name);});
+     </script>
+        <button id="prog_start"  class="forma_button" type="button" onclick="uploadImage()">Завантажити зображення</button>
+    </form>
+    <div class="progres" id="pr1" ></div>
+    <div class="progres" id="pr2" ></div>
+    <div class="progres" id="pr3" ></div>
+    <div class="progres" id="pr4" ></div>
+    <div class="progres" id="pr5" ></div>
+    <div class="progres" id="pr6" ></div>
+    <div class="progres" id="pr7" ></div>
+    <div class="progres" id="pr8" ></div>
+    <div class="progres" id="pr9" ></div>
+    <div class="progres" id="pr10" ></div>
+    <div class="progres" id="pr11" ></div>
+    <div class="progres" id="pr12" ></div>
+    <div class="progres" id="pr13" ></div>
+    <div class="progres" id="pr14" ></div>
+    <div class="progres" id="pr15" ></div>
+    <div class="progres" id="pr16" ></div>
+    <div class="progres" id="pr17" ></div>
+    <div class="progres" id="pr18" ></div>
+    <div class="progres" id="pr19" ></div>
+    <div class="progres" id="pr20" ></div>
+    <p id="reasult"></p>
+    </div>
+    <div class="b2 b2_coin" >
+        <form id="people_form" style="display: none;">
+            <p><label for="number1">Мінімальна кількість мешканців у будинку:</label>
+            <input type="text" id="number1" name="number1" class = "inpu1" size="6" oninput="this.value = this.value.replace(/\D/g, '')">
+            </p>
+            <p><label for="number2">Максимальна кількість мешканців у будинку:</label>
+            <input type="text" id="number2" name="number2" class = "inpu1" size="6" oninput="this.value = this.value.replace(/\D/g, '')">
+            </p>
+            <button type="button" onclick="calculate()" class="forma_button">Розрахувати чисельність населення</button>
+          </form>
+          <p id="itod_sum"></p>
+   
+    <div> </div> </div>
+    <script>
+    itog_sum_hoses = 0
+    
+    function calculate() {
+      var num1 = parseInt(document.getElementById('number1').value);
+      var num2 = parseInt(document.getElementById('number2').value);
+      itod_piople = 0
+      for (var i = 1; i <= itog_sum_hoses; i++) {
+        itod_piople += Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+      }
+      document.getElementById("itod_sum").innerHTML = 'У поселені могло проживати приблизно ' + itod_piople + ' осіб'
+    }
+
+    function start_progress() {
+        document.getElementById("reasult").innerHTML = ''
+        for (var i = 1; i <= 20; i++) {
+            (function(index) {
+                setTimeout(function() {
+                    var progress_element = document.getElementById('pr' + index);
+                    progress_element.style.display = "block";
+                }, index * 3740);
+            })(i);
+        }
+    }
+    function clean_progres() {
+    return new Promise(function(resolve) {
+        var progress_elements = document.getElementsByClassName('progres');
+        var visibleProgressElements = Array.from(progress_elements).filter(function(element) {
+            return window.getComputedStyle(element).getPropertyValue('display') === 'block';
+        });
+
+        if (visibleProgressElements.length === 20) {
+            hideElements(visibleProgressElements);
+            resolve(); // Разрешаем обещание при успешном выполнении
+        } else {
+            setTimeout(function() {
+                clean_progres().then(resolve); // Рекурсивно вызываем clean_progres и разрешаем обещание
+            }, 150);
+        }
+    });
+}
+
+function hideElements(elements) {
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+        
+    }
+}
+    
+    document.getElementById('prog_start').addEventListener('click', start_progress);
+    
+    function uploadImage() {
+    var formData = new FormData(document.getElementById("imageUploadForm"));
+
+    $.ajax({
+        url: "trip_img",  // Укажите путь к вашему Django-обработчику загрузки
+        type: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            clean_progres().then(function() {
+            // Обработка успешного ответа от сервера
+            console.log(response);
+            var people_form = document.getElementById("people_form");
+            itog_sum_hoses = response.itog_sum_hose
+            document.getElementById("reasult").innerHTML = 'Площадок на непошкодженій території: ' + response.sum_hose
+            + '<br><br>' + 'З урхуванням пошкоджених теристорій: ' + response.itog_sum_hose
+            people_form.style.display = 'block'
+        })},
+        error: function(error) {
+            // Обработка ошибок
+            console.log(error);
+            clean_progres().then(function() {
+                document.getElementById("reasult").innerHTML = '<span style="color: #ff0000">Помилка сервера, спробуйте ще раз</span>'
+
+            })
+        }
+    });
+}
+    
+    
+    </script>
+
+{% endblock %}

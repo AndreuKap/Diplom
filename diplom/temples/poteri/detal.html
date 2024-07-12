@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ statia.statia_title }}{% endblock %}
+
+
+{% block content %}
+<div class="zag_kar_b">
+	
+	 <img src="/static/media/{{statia.model_img}}" class="zag_kar">
+</div>
+
+<p class="zag_ststia">{{ statia.statia_title }}</p>
+<div class="text_block"> {% autoescape off %}{{ statia.html_texst }}{% endautoescape %}</div>
+
+<p><i>{{ statia.pub_date }}</i></p>
+<hr class="hr_coment">
+<div class="zag_coment">Коментарі</div>
+
+<form class="" action="{% url 'poteri:lave_comment' statia.id %}" method="POST">
+	{% csrf_token %}
+<input class="inpu1 inpu2" type="text" required="" placeholder="Представтесь будь ласка" name="name" style = "height: 30px"> <br>
+<textarea  class="inpu1 inpu2" name = "text" required="" placeholder="" cols = "" rows = "3" style =" resize: vertical"> </textarea><br>
+<button tupe = "submit" class="coment_button">Залишити коментар</button>
+
+</form>
+{% if latest_comments_list %}
+
+{% for c in latest_comments_list %}
+<div>
+	<p class = "text_coment" style="color: #69221d;"><b>{{c.name}}</b></p>
+	<p class = "text_coment">{{c.comment_text}}</p>
+</div>
+{% endfor %}
+
+{% else %}
+<p p class = "text_coment">Станьте першим...</p>
+{% endif %}
+{% endblock %}

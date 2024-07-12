@@ -1,0 +1,350 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"r",
+				"rede_file"
+			],
+			[
+				"s",
+				"s_new"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"f",
+				"func"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"v",
+				"vivod_text"
+			],
+			[
+				"st",
+				"strana"
+			],
+			[
+				"k",
+				"klass"
+			],
+			[
+				"do",
+				"dount_google"
+			],
+			[
+				"ma",
+				"margin-right\tproperty"
+			],
+			[
+				"i",
+				"inline\tdisplay"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"p",
+				"padding\tproperty"
+			],
+			[
+				"h",
+				"height\tproperty"
+			],
+			[
+				"c",
+				"color\tproperty"
+			],
+			[
+				"ke",
+				"key_ch"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Владелец/Desktop/Магистр/Современные технологии програмрования/лаб/1/6.py",
+		"/C/Users/Владелец/Desktop/Магистр/Современные технологии програмрования/лаб/1/5.py",
+		"/C/Users/Владелец/Desktop/Магистр/Современные технологии програмрования/лаб/1/4.py",
+		"/C/Users/Владелец/Desktop/Магистр/Современные технологии програмрования/лаб/1/3.py",
+		"/C/Users/Владелец/Desktop/Магистр/Современные технологии програмрования/лаб/1/2.py",
+		"/C/Users/Владелец/Desktop/Магистр/Современные технологии програмрования/лаб/1/1.py",
+		"/C/Users/Владелец/Desktop/письмо.txt",
+		"/C/Users/Владелец/Desktop/bot/bot.py",
+		"/C/Users/Владелец/Desktop/bot.py",
+		"/C/Users/Владелец/Desktop/chernovik (27-01-2022).py",
+		"/C/Users/Владелец/Desktop/24-08-22/ob.pyw",
+		"/C/Users/Владелец/Desktop/2-09-22/pars.py",
+		"/C/Users/Владелец/Desktop/Архив Free-Lanse/27-07-22/parser.py",
+		"/C/Users/Владелец/Desktop/Початок року2022.jpg",
+		"/C/Users/Владелец/Desktop/mod/ob.py",
+		"/C/Users/Владелец/Desktop/Архив Free-Lanse/11-08-22/parser.py",
+		"/C/Users/4227~1/AppData/Local/Temp/Rar$DRa1920.5946/LapkaBot/main.py",
+		"/C/Users/Владелец/Desktop/24-08-22/test.py",
+		"/C/Users/Владелец/Desktop/ned.html",
+		"/C/Users/Владелец/Desktop/rasilka.py",
+		"/C/Users/Владелец/Desktop/raz.py",
+		"/C/Users/Владелец/Desktop/26-08-22/bot.py",
+		"/C/Users/Владелец/Desktop/26-08-22/dict.py",
+		"/C/Users/Владелец/Desktop/WhatsApp.lnk",
+		"/C/Users/Владелец/Desktop/24-08-22/ob.py",
+		"/C/Users/Владелец/Downloads/Telegram Desktop/style_form (2).css",
+		"/C/Users/Владелец/Desktop/15-08-22-1/bot.py",
+		"/C/Users/Владелец/Desktop/Архив Free-Lanse/27-07-22/CRM/sylectus_parser/parser.py",
+		"/C/Users/Владелец/Desktop/15-08-22-1/tzi_v2.py",
+		"/C/Users/Владелец/Desktop/вижнер кирилица/vigner.py",
+		"/C/Users/Владелец/Desktop/Документы инстетута/ТЗИ/лаб/4/4.py",
+		"/C/Users/Владелец/Desktop/15-08-22-1/shfr.py",
+		"/C/Users/Владелец/Desktop/15-08-22-1/defk.py",
+		"/C/Users/Владелец/Desktop/15-08-22-1/def.py",
+		"/C/Users/Владелец/Desktop/11-08-22/parser.py",
+		"/C/Users/Владелец/Desktop/index.html",
+		"/C/Users/Владелец/Desktop/style_table.css",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/templates/parsing_s.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/views.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/CRM/urls.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/urls.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/logic.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/CRM/settings.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/views.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/parser.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/models.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/admin.py",
+		"/C/Users/Владелец/Desktop/27-07-22/google_maps.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/urls.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/templates/base.html",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/templates/car_add.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/admin.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/poteri_2.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/base.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/detal.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/urls.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/models.py",
+		"/C/Users/Владелец/Desktop/27-07-22/parser.py",
+		"/C/Users/Владелец/Desktop/27-07-22/CRM/sylectus_parser/apps.py",
+		"/C/Users/Владелец/Desktop/main.py",
+		"/C/Users/Владелец/Desktop/od.py",
+		"/C/Users/Владелец/Desktop/tzi_v2.py",
+		"/C/Users/Владелец/Desktop/arduino.py",
+		"/C/Users/Владелец/Desktop/mod/od.py",
+		"/C/Users/Владелец/Desktop/ob.py",
+		"/C/Users/Владелец/Desktop/tzi v1.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/css/style_m.css",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/pro_p.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/news.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/css/style_b.css",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/poteri_3.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/poteri_1.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/python/bry.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/python/def_poter.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/python/kap.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/python/mongol.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/static/base/js/script.js",
+		"/C/Users/Владелец/Desktop/diplom/diplom/static/base/css/style_m.css",
+		"/C/Users/Владелец/AppData/Local/Programs/Python/Python310/Lib/random.py",
+		"/C/Users/Владелец/Desktop/def_poter.py",
+		"/C/Users/Владелец/Desktop/kap.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/base.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/index.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/temples/poteri/index.html",
+		"/C/Users/Владелец/Desktop/diplom/diplom/static/index/js/script.js",
+		"/C/Users/Владелец/Desktop/script.js",
+		"/C/Users/Владелец/Desktop/style_m.css",
+		"/C/Users/Владелец/Desktop/style_b.css",
+		"/C/Users/Владелец/Desktop/2/tzi_v2.py",
+		"/C/Users/Владелец/Desktop/pi.py",
+		"/C/Users/Владелец/Desktop/Упр/pixsel.py",
+		"/C/Users/Владелец/Desktop/style.css",
+		"/C/Users/Владелец/Desktop/interfeis.html",
+		"/C/Users/Владелец/Desktop/basa.css",
+		"/C/Users/Владелец/Desktop/css/style.css",
+		"/C/Users/Владелец/Desktop/css/reset.css",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/apps.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/apps/poteri/tests.py",
+		"/C/Users/Владелец/Desktop/diplom/diplom/asgi.py",
+		"/C/Users/Владелец/Desktop/pixsel.py",
+		"/C/Users/Владелец/Desktop/RSA.py",
+		"/C/Users/Владелец/Desktop/gen_prost.py",
+		"/C/Users/Владелец/Desktop/test.py",
+		"/C/Users/Владелец/Desktop/vigner2.py",
+		"/C/Users/Владелец/Desktop/18.04.xlsx",
+		"/C/Users/Владелец/Desktop/2022-04-17_11-33-51.png",
+		"/C/Users/Владелец/Desktop/FileZilla.xml",
+		"/C/Users/Владелец/Desktop/ГМО Цезарь/tzi v2.py",
+		"/C/Users/Владелец/Desktop/гмо в 2/tzi.py",
+		"/C/Users/Владелец/Desktop/__pycache__/tzi.cpython-310.pyc",
+		"/C/Users/Владелец/Desktop/ГМО Цезарь/tzi v3.py",
+		"/C/Users/Владелец/Desktop/tzi.py",
+		"/C/Users/Владелец/Desktop/ГМО Цезарь/tzi.py",
+		"/C/Users/Владелец/Desktop/tzi1.py",
+		"/C/Users/Владелец/Desktop/vigner.py",
+		"/C/Users/Владелец/Desktop/p.py",
+		"/C/Users/Владелец/Desktop/start.py",
+		"/C/Users/Владелец/Desktop/key1.py",
+		"/C/Users/Владелец/Desktop/drob.py",
+		"/C/Users/Владелец/Desktop/key.py",
+		"/C/Users/Владелец/Desktop/tzi1.txt",
+		"//Pc/c/Users/Владелец/Рабочий стол/prog/l6.py"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "manage.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

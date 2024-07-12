@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Новини проекту{% endblock %}
+
+
+{% block content %}
+
+<div class="blog">
+<p class="blog-1">Новини проекту</p>
+{% if list_index %}
+<div class="block-kon">
+{%for a in list_index %}
+    <a href="{% url 'poteri:detal' a.id %}">
+    	<div class="block_1">
+  <img src="/static/media/{{a.model_img}}" class="block_kar">
+<p class="block_zag">{% autoescape off %}{{a.statia_title}}{% endautoescape %}</p>
+</div>
+    </a>
+{%endfor%}
+
+
+{% else %}
+<p>Ждите новостей</p>
+{% endif %}
+</div>	</div>
+
+
+
+{% endblock %}

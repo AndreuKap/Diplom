@@ -1,0 +1,111 @@
+body, nav, ul, li, a  {margin: 0; padding: 0;}
+body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+a {text-decoration: none;}
+
+.container {
+    max-width: auto;
+    position: fixed;
+    top: 0;
+    z-index: 150;
+    display: block;
+    margin-left: 32%;   
+}
+
+
+
+.toggleMenu {
+    display:  none;
+    padding: 10px 15px;
+    color: #fff;
+
+}
+.nav {
+    list-style: none;
+     *zoom: 1;
+}
+.nav:before,
+.nav:after {
+    content: " "; 
+    display: table; 
+}
+.nav:after {
+    clear: both;
+}
+.nav ul {
+    list-style: none;
+    width: 9em;
+}
+.nav a {
+    padding: 10px 15px;
+    color: #fff;
+}
+.nav li {
+    position: relative;
+}
+.nav > li {
+    float: left;
+    border-bottom: 0px solid #69221d;
+}
+.nav > li > .parent {
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.nav > li > a {
+    display: block;
+}
+.nav li  ul {
+    background: rgba(170,134,46,0.7);   
+    position: absolute;
+    left: -9999px;
+}
+.nav > li.hover > ul {
+    left: 0;
+}
+.nav li li.hover ul {
+    left: 100%;
+    top: 0;
+}
+.nav li li a {
+    display: block;
+    background: rgba(170,134,46,0.7);
+    position: relative;
+    z-index:200;
+    border-bottom: 1px solid #fff;
+}
+.nav li li li a {
+    background:rgba(170,134,46,0.7);
+    z-index:300;
+    border-bottom: 1px solid #fff;
+}
+
+
+@media screen and (max-width: 1080px) {
+    .container {
+    margin-left: 10px;
+
+    }
+    .nav > li {
+        background: rgba(170,134,46,0.7);
+    }
+    .active {
+        display: block;
+    }
+    .nav > li {
+        float: none;
+    }
+    .nav > li > .parent {
+        background-position: 95% 50%;
+    }
+    .nav li li .parent {
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    .nav ul {
+        display: block;
+        width: 100%;
+    }
+   .nav > li.hover > ul , .nav li li.hover ul {
+        position: static;
+    }
+
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>AI iнструменти в археологiчнiй та iсторичнiй науцi</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'index/css/font.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'index/css/style_m.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'index/css/style_b.css' %}">
+	<link rel="icon" href="static/media/static/img/fi.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="static/media/static/img/fi.ico" type="image/x-icon" />
+
+
+</head>
+<body>
+		<div class="fullscreen-bg">
+		<div class="overlay">
+        <h1  class="zagolovok">AI iнструменти в археологiчнiй<br>та iсторичнiй науцi</h1>
+
+		</div>
+	    <video loop muted autoplay poster="/static/index/vidio/plane.jpg" class="fullscreen-bg__video">
+	        <source src="/static/index/vidio/v.mp4" type="">
+	        <source src="{% static 'index/vidio/v.webm' %}" type="index/video/webm">
+	    </video>
+	</div>
+<div class="hend" id="menu"> 
+	<div class="container" >
+
+<a class="toggleMenu menu_font" href="#">Меню</a>
+<ul class="nav" >
+	<li class="test">
+		<a href="#" id="col1" class="menu_font">головна</a>
+	</li>
+	<li>
+		<a href="/pro_p" id="col2" class="menu_font">про проект</a>
+		
+	</li>
+	<li >
+		<a href="#" id="col3" class="menu_font">додатки</a>
+		<ul>
+			<li id="col31" style="width: 400px;"><a href="/schot" class="menu_font">Небойовi втрати</a></li>
+			<li id="col32" style="width: 400px;"><a href="/schot3" class="menu_font">Аналiз знiмкiв трипiльських протомiст</a></li>
+			<li id="col33" style="width: 400px;"><a href="/schot2" class="menu_font">Класифiкацiя античних монет</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="news" id="col4" class="menu_font">новини проекту</a>
+		
+	</li>
+	
+</ul>
+</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="{% static 'index/js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/js/script_color.js' %}"></script>
+<hr class="line">
+<div class="cvetblog" id="col">
+
+	</div>
+
+</div>
+
+<div class="blog">
+<p class="blog-1">Новини проекту</p>
+<div class="block-kon">
+{% if list_index %}
+
+{%for a in list_index %}
+    <a href="{% url 'poteri:detal' a.id %}">
+    	<div class="block_1">
+  <img src="static/media/{{a.model_img}}" class="block_kar">
+<p class="block_zag">{% autoescape off %}{{a.statia_title}}{% endautoescape %}</p>
+</div> </a>
+{%endfor%}
+
+   
+
+{% else %}
+<p>Чекайте на новини</p>
+{% endif %}
+</div>	</div>
+<hr class="hr_coment">
+
+<div class="instr_block">
+	<p class="blog-1">Додатки</p>
+	
+<a href="/schot"><div class="bk bk1" ><p style="margin-top: 150px">Розрахунок <br>не бойових втрат</p></div></a>
+<a href="/schot3"><div class="bk bk2" ><p style="margin-top: 150px">Аналiз знiмкiв трипiльських протомiст</p></div>
+<a href="/schot2"><div class="bk bk3" ><p style="margin-top: 150px">Класифiкацiя <br>античних монет</p></div>
+</a>
+</div>
+
+
+
+
+	<footer >
+		<a class = "textfuter" href="mailto:kapeleshchuk.k@gmail.com" target="_blank" style="width: 28%; float: left; padding-top: 15.5px;">Зворотній зв'язок</a>
+		<p class = "textfuter podpis" >Капелещук Андій,<br>для кваліфікаційної роботи магістра 2023
+	</footer>
+
+</body>
+</html>

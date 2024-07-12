@@ -1,0 +1,289 @@
+.line{
+	color: #fff;
+	height: 0px;
+	border: none;
+	background-color: #fff;
+	z-index: 150;
+
+}
+
+@media (max-width: 450px) {
+
+    body{
+        width: 110%;
+    }
+    
+    }
+
+@media (max-width: 400px) {
+
+        body{
+            width: 125%;
+        }
+        
+        }
+
+ @media (max-width: 300px) {
+
+        body{
+            width: 160%;
+        }
+        
+        }
+
+.fullscreen-bg {
+    overflow: hidden;
+    z-index: -100;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top:45%;
+}
+ 
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+.overlay {
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 115%;
+    z-index: 10;
+}
+
+.hend{
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+    text-align: center;
+
+}
+
+.cvetblog{
+	width: 100%;
+	height: 70px;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.zagolovok{
+   text-align: center;
+    color: #fff;
+    font-family: "Lombardina Initial One";
+    font-size: 150px;
+    margin-top:14%;
+    font-weight: 60;
+}
+
+.menu_font{
+   text-align: center;
+    color: #fff;
+    font-family: "Lombardina Initial One";
+    font-size: 50px;
+    margin-top: 0%;
+    font-weight: 20;
+}
+
+.block_1{
+    width: 400px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 600px) {
+    .block_1{
+        margin-left: 4%;
+        margin-right: 4%;
+
+    }
+}
+
+.block_1:hover{
+    background-color: rgba(170,134,46,0.1);
+}
+
+.block_kar{
+    width: 400px;
+    height: 250px;
+}
+
+.block_kar:hover{
+   filter: alpha(Opacity=75);
+    opacity: 0.75; 
+}
+
+.block_zag{
+    font-size: 30px;
+    text-align: center; 
+    color: #69221d;
+
+}
+
+.blog{
+	margin-top: 20px;
+	position: relative;
+    height: auto;
+
+
+}
+
+.block-kon{
+    margin: 0 auto;
+    width: 1320px;
+    display: block;
+    height: auto;
+}
+
+.blog-1{
+   text-align: center;
+    color: #69221d;
+    font-family: "Lombardina Initial One";
+    font-size: 90px;
+    margin-top: 0%;
+    font-weight: 20;
+    margin-top: 40px;
+}
+
+@media (max-width: 450px) {
+    .blog-1{
+        font-size: 70px;
+
+}}
+
+footer {
+	width: 100%;
+	height: 40px;
+	background-color: #69221d;
+	position: relative;
+	z-index: inherit;
+    display: block;
+    padding-top: 10px;
+    overflow: hidden;
+    
+}
+
+.textfuter {
+    color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.podpis{
+    text-align: right; 
+    width: 68%; 
+    float: right; 
+    margin: 0px;
+}
+
+.hr_coment{
+    width: 70%;
+    margin:0 auto;
+    margin-top: 40px;
+    height: 2px;
+    background-color: #69221d;
+
+}
+
+.instr_block{
+    margin-top: 30px;
+}
+
+.bk{
+    float: left;
+    width: 33.33%;
+    color: #ffffff;
+    font-family: "Lombardina Initial One";
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5); /* Ширина контура и цвет контура (для WebKit браузеров, таких как Chrome и Safari) */
+    text-stroke: 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 13px 13px 30px rgba(0, 0, 0, 1); /* Горизонтальное смещение, вертикальное смещение, радиус размытия и цвет тени */
+    height: 524px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 70pt;
+}
+.bk :hover{
+    color: #69221d;
+    text-shadow: 13px 13px 30px rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 1000px) {
+    .bk{
+        width: 100%;
+        height: 524px;
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 60pt;
+    }
+
+}
+
+.bk1{
+    background-image: url(../img/b1.jpg);
+}
+
+.bk2{
+    background-image: url(../img/b2.jpg);
+}
+.bk3{
+    background-image: url(../img/b3.jpg);
+}
+
+
+@media (max-width: 1500px) {
+
+.zagolovok{
+    font-size: 600%;
+    font-weight: 40;
+}
+
+}
+
+@media (max-width: 1000px) {
+
+    .zagolovok{
+        font-size: 400%;
+        font-weight: 30;
+    }
+    
+    }
+
+
+@media (max-width: 650px) {
+
+        .zagolovok{
+            font-size: 400%;
+            font-weight: 20;
+            margin-top: 180px;
+        }
+        
+        }
+
+
+@media (max-width: 1300px) {
+.block_1{
+    float: none;
+}
+.block-kon{
+    width: 440px;
+}
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('../vidio/plane1.jpg') center center / cover no-repeat;
+        height: 400px;
+    }
+    .fullscreen-bg__video {
+        display: none;
+    }
+}

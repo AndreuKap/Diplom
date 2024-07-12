@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+
+{% block content %}
+<div class="b1">
+
+<table border="1" style="border-collapse: collapse; width: 100%;">
+<tbody>
+<tr>
+<td style="width: auto; height: 40px; text-align: center;" colspan="6">Первая армия</td>
+<td style="width: auto; height: 40px; text-align: center;" rowspan="2">?</td>
+<td style="width: auto; height: 40px; text-align: center;" colspan="6">Вторая армия</td>
+</tr>
+<tr>
+<td class = "tablel">Тк</td>
+<td class = "tablel">Лк</td>
+<td class = "tablel">П</td>
+<td class = "tablel">Л</td>
+<td class = "tablel">О</td>
+<td class = "tablel">П1</td>
+<td class = "tablel">П2</td>
+<td class = "tablel">О</td>
+<td class = "tablel">Л</td>
+<td class = "tablel">П</td>
+<td class = "tablel">Лк</td>
+<td class = "tablel">Тк</td>
+</tr>
+<tr>
+<td class = "tablel" ><input class="text_form inpu1" type="text" id ="t11" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t12" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t13" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel"><input class="text_form inpu1" type="text" id ="t14" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t15" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t16" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel"><select id="t3" class = "text_form inpu1">
+      <option value="1" >&#10229;</option>
+      <option value="2">&#10230;</option>
+
+     </select></td>
+<td  class = "tablel"><input class="text_form inpu1" type="text" id ="t26" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel"><input class="text_form inpu1" type="text" id ="t25" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t24" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t23" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel"><input class="text_form inpu1" type="text" id ="t22" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+<td  class = "tablel" ><input class="text_form inpu1" type="text" id ="t21" size="4%"  name="" oninput="this.value = this.value.replace(/\D/g, '')" ></td>
+</tr>
+</tbody>
+</table>
+ <button  class="forma_button" style="font-size: 14pt; padding: 7px; margin-top: 20px;" id= "ras">Ррасчет</button>
+</div>
+<div class="b2">
+
+<p><b>Условные обозначения:</b></p>
+<div style="margin-left: 30px;">
+<p><b>Тк</b> &ndash; тяжелая конница;</p>
+<p><b>Лк</b> &ndash; легкая конница;</p>
+<p><b>П</b> &ndash; пихота;</p>
+<p><b>Л</b> &ndash; лучники, арбалетчики</p>
+<p><b>О</b> &ndash; народное ополчение</p>
+<p><b>?</b> &ndash; результат боя;</p>
+<p><b>П1</b> &ndash; потери первой стороны;</p>
+<p><b>П2</b> &ndash; потери второй стороны.</p>
+</div>
+</div>
+
+
+<script type="text/python" >
+from browser import*
+def nero(event):
+    def ak(a):
+        return 6/(1 + 2.718281828459045 ** (-a))
+
+    v1 = int(document['t11'].value)*0.001
+    v2 = int(document['t12'].value)*0.001
+    v3 = int(document['t13'].value)*0.001
+    v4 = int(document['t14'].value)*0.001
+    v5 = int(document['t15'].value)*0.001
+
+    v6 = int(document['t3'].value)
+
+    v7 = int(document['t21'].value)*0.001
+    v8 = int(document['t22'].value)*0.001
+    v9 = int(document['t23'].value)*0.001
+    v10 = int(document['t24'].value)*0.001
+    v11 = int(document['t25'].value)*0.001
+
+    ves1 = [7.48922215832009E-03,
+            0.279700373789777,
+            -0.495574386410296,
+            -2.00239079277796E-03,
+            0.145786283137142,
+            0.420167390317331,
+            0.361396823004034,
+            -0.252172801543938,
+            -0.317960345931851,
+            -2.38321867223771E-02,
+            0.337259748155454,
+            -8.29172918626431,
+            -3.36991585145389,
+            1.18327833472335,
+            -7.48878873370334,
+            2.31018295573727,
+            -13.1221404835802,
+            -0.44959549432576,
+            2.90605480863233,
+            -1.32371181674536,
+            -10.0614665673345,
+            -4.10328433345968,
+            0.789372025892088,
+            -1.56704122971262,
+            -0.263356400170605,
+            1.64413771804054,
+            -1.56432656692506,
+            0.617913302019535,
+            -2.75094531832463E-02,
+            -2.56822031117804,
+            0.287938298778459,
+            -7.30170831544402E-02,
+            3.18109741647151,
+            -0.327239002588179,
+            -0.167819706192501,
+            0.325430846185898,
+            0.452825235613545,
+            -0.454324249544098,
+            9.99980215544595E-02,
+            -0.248736292281645,
+            -0.525352490901425,
+            -0.50321132709014,
+            -0.401696088046081,
+            0.551923232352351,
+            -0.240864634513855,
+            0.429240047931671,
+            -0.340168237686157,
+            -6.71606659889221E-02,
+            0.156968474388123,
+            -0.457374513149261,
+            -0.350978851318359,
+            0.227234065532684,
+            -0.262104392051697,
+            -0.342489898204803,
+            -1.86307430267334E-02,
+            0.660066950346547,
+            0.7559403756511,
+            -1.5730602080872,
+            0.992852333723611,
+            -1.51220473903427,
+            0.594963986061069,
+            -2.78750271137029,
+            -0.297439989408377,
+            -1.69139550082385,
+            0.496283153592068,
+            -0.434828421330236,
+            -1.0570239598281,
+            -0.767947583269767,
+            -5.63563071334955E-02,
+            -0.164038588078405,
+            -0.177256499878398,
+            -3.099303987086,
+            0.185196107266535,
+            -0.949628346800488,
+            0.211900731452707,
+            -1.81190013591885,
+            0.226147755140923,
+            0.875896297989783,
+            -0.779761702565241,
+            0.186273254932591,
+            2.23358361961647,
+            -1.62216007942412,
+            1.19388099806475,
+            -1.12083608278354,
+            -4.17191156545539,
+            0.324804909508342,
+            0.167389079740458,
+            4.95249030599374,
+            -3.00067395222011,
+            -2.16468478443858,
+            0.766091725562863,
+            0.234267767471172,
+            -0.573890972061663,
+            -9.25771950216714,
+            -0.107950151687444,
+            -1.21899028842233,
+            -1.21047006211935,
+            -7.20545059594806,
+            -0.964178775447877,
+            -9.93507504463196E-02,
+            -0.283326506614685,
+            -0.275893867015839,
+            -0.227207899093628,
+            0.10128253698349,
+            -0.370333790779114,
+            -0.309549748897552,
+            7.79294967651367E-03,
+            0.244180381298065,
+            -9.27284955978394E-02,
+            -1.12621188163757E-02,
+            0.552943346833202,
+            -3.34441608566776,
+            4.44924824764743E-02,
+            4.27210796216639,
+            -2.94691949694853,
+            0.817286123900162,
+            -0.600941721307855,
+            -7.85976354518313,
+            7.58714481858659E-02,
+            -0.683658629363607,
+            8.1282022381137]
+    for i in range(11):
+        ves1[i-1] = ves1[i-1] * v1
+        ves1[i+10] = ves1[i+10] * v2
+        ves1[i+22] = ves1[i+22] * v3
+        ves1[i+33] = ves1[i+33] * v4
+        ves1[i+44] = ves1[i+44] * v5
+        ves1[i+55] = ves1[i+55] * v6
+        ves1[i+66] = ves1[i+66] * v7
+        ves1[i+77] = ves1[i+77] * v8
+        ves1[i+88] = ves1[i+88] * v9
+        ves1[i+99] = ves1[i+99] * v10
+        ves1[i+110] = ves1[i+110] * v11
+
+    ves2 = [ 
+            -1.22133273122887,
+            -0.69127555203557,
+            -0.458330636632284,
+            0.10609956885347,
+            0.387312131420416,
+            0.448385416275219,
+            -1.02954363913943,
+            0.783823242748062,
+            0.420037956797163,
+            0.07587171366822,
+            -1.69775043017566,
+            -3.62906806762489,
+            0.429753360062443,
+            -6.19845241897838E-02,
+            0.602400680880934,
+            -0.540305928329761,
+            1.97397199724219E-02,
+            0.360764945796909,
+            -1.23171183009646,
+            -2.25647830943386,
+            -0.817709472127303,
+            1.90293363615108
+    ]
+    mas_sum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    sum1 = 0
+    for i in range(11):
+        for x in range(0+i, 110+i, 11):
+            sum1 += ves1[x-1]
+        mas_sum[i-1] = ak(sum1)
+    print(mas_sum)
+    sum2 = 0 
+    sum3 = 0
+
+    for i in range(2, 22, 2):
+        sum2 += ves2[i-2] * mas_sum[int(i/2-1)]
+        sum3 += ves2[i-1] * mas_sum[int(i/2-1)]
+
+    document['t16'].value = round(sum2 * -1000)
+    document['t26'].value = round(sum3 * -1000)
+
+document['ras'].bind('click', nero)
+   </script>
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'index/css/font.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'base/css/style_m.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'base/css/style_b.css' %}">
+	<link rel="icon" href="/static/media/static/img/fi.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/static/media/static/img/fi.ico" type="image/x-icon" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js"></script>
+</head>
+<body onload="brython()">
+
+
+<div class="cvetblog">
+	<div class="container" >
+
+<a class="toggleMenu" href="#">Меню</a>
+<ul class="nav" >
+	<li class="test">
+		<a href="/" id="col1">Головна</a>
+	</li>
+	<li>
+		<a href="/pro_p" id="col2">Про проєкт</a>
+		
+	</li>
+	<li  >
+		<a href="#" id="col3">Додатки</a>
+		<ul>
+			<li><a href="/schot">Небойові втрати</a></li>
+			<li><a href="/schot3">Аналіз знімків трипільських протоміст</a></li>
+			<li><a href="/schot2">Класифікація античних монет</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="/news" id="col4">Новини проєкту</a>
+		
+	</li>
+	
+</ul>
+</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="{% static 'index/js/script.js' %}"></script>
+	</div>
+
+
+
+<div class="basa">
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+
+</body>
+	<footer >
+		<a class = "textfuter" href="mailto:kapeleshchuk.k@gmail.com" target="_blank" style="width: 150px; float: left; padding-top: 15.5px;">Зворотній зв'язок</a>
+		<p class = "textfuter podpis" >Капелещук Андій,<br>для кваліфікаційної роботи магістра 2023
+	</footer>
+</html>

@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+
+{% block title %}Підрохунок не бойових втрат{% endblock %}
+
+
+{% block content %}
+
+
+<div class="b1" id="osnova5">
+
+
+ {% for i in kol_potok %}
+
+  <div class="box" id="box{{ forloop.counter }}">
+    
+     <form action="#" id="poteri_form">
+      <input type="text" id="chis{{ forloop.counter }}" oninput="this.value = this.value.replace(/\D/g, '')" value="0" style="font-size: 32pt; color: #aa862e;" size="6" class = "inpu1" >
+      <p><strong>Поточний місяць</strong></p>
+       <select id="nach{{ forloop.counter }}" class = "inpu1">
+       <option value="9" selected>Вересень</option>
+       <option value="10" >Жовтень</option>
+       <option value="11">Листопад</option>
+       <option value="12">Грудень</option>
+       <option value="1" >Січень</option>
+       <option value="2" >Лютий</option>
+       <option value="3" >Березень</option>
+       <option value="4" >Квітень</option>
+       <option value="5" >Травень</option>
+       <option value="6" >Червень</option>
+       <option value="7" >Липень</option>
+       <option value="8" >Серпень</option>
+      </select> 
+      <p><strong>Климатична зона</strong></p>
+      <select id="mesto{{ forloop.counter }}" class = "inpu1">
+       <option value="4" >4</option>
+       <option value="5" >5</option>
+       <option value="6" >6</option>
+       <option value="7" >7</option>
+       <option value="8" >8</option>
+       <option value="9" >9</option>
+       
+      </select> 
+     </form>     
+
+     <table border="1" class="table_col" >
+    <tbody>
+    <tr >
+    <td class = "col1"><p class="text_form">Кількість коней: </p></td>
+    <td class = "col2" ><p class="text_form" id="lochad{{ forloop.counter }}"></p></td>
+    </tr>
+    <tr>
+    <td class = "col1"> <p class="text_form">Довжина колон на марші, при діленні <select id="kolona{{ forloop.counter }}" class = "inpu1" class="text_form">
+      <option value="1" >1</option>
+      <option value="2" selected>2</option>
+      <option value="3" >3</option>
+      <option value="4" >4</option>
+     </select></td>
+    <td class = "col2"><p id="kolonav{{ forloop.counter }}" class="text_form"></p></td>
+    </tr>
+    <tr>
+    <td class = "col1"><p class="text_form">Загальна вага фуражу на добу: </p></td>
+    <td class = "col2"><p class="text_form" id="ves{{ forloop.counter }}"></p></td>
+    </tr>
+    <tr>
+    <td class = "col1"><p class="text_form">Довжина обозу (без урахування озброєння), якщо запас фуражу на <input class="text_form inpu1" type="text" id="dey{{ forloop.counter }}" size="2" value="10" name="" oninput="this.value = this.value.replace(/\D/g, '')" > діб: </p></td>
+    <td class = "col2"><p class="text_form" id="oboz{{ forloop.counter }}"></p></td>
+     </tr>
+     <tr>
+        <td class = "col1"><p class="text_form">Пройшло діб </p></td>
+        <td class = "col2"><p class="text_form" id="dey_counts{{ forloop.counter }}"></p></td>
+         </tr>
+    </tbody>
+    </table>
+    
+    <div class="buttonblock">
+
+    <button class="forma_button" id="plus5{{ forloop.counter }}">+5</button>
+    <button class="forma_button" id="plus30{{ forloop.counter }}">+30</button>
+    <input type="text" id="plusaf{{ forloop.counter }}" size="3" name="" oninput="this.value = this.value.replace(/\D/g, '')" class = "inpu1">
+  
+    <button  class="forma_button" id="plusa{{ forloop.counter }}">+a</button>
+       <input type="text" id="dobav{{ forloop.counter }}" size="3" name="" oninput="this.value = this.value.replace(/\D/g, '')" class = "inpu1">
+       <button  class="forma_button" id="plusa1{{ forloop.counter }}">Додати резерви</button>
+
+       <input type="text" id="mininp{{ forloop.counter }}" size="3" name="" oninput="this.value = this.value.replace(/\D/g, '')" class = "inpu1">
+       <button  class="forma_button" id= "minb{{ forloop.counter }}">Загинуло в битві</button>
+
+    </div>
+
+   
+<hr class=".hr_form">
+
+<script >
+
+var den1 = 0;
+var den2{{ forloop.counter }} = 0;
+var global_nero = 0
+
+
+function prc(a, b) {
+    return (a / 100) * b;
+}
+function ricar(kol_vo, i2) {
+    var kol_losh = kol_vo * 2;
+    var ves3 = (prc(kol_losh, 60) * 8.5 + kol_vo + prc(kol_losh, 40) * 7);
+    var ves = ves3 * i2;
+    var oboz1 = 0;
+    var ves1 = ves - kol_losh * 20;
+    var obozl = oboz1 + (oboz1 - ves1 / 500) * -1;
+    var oboz2 = ((ves1 / 500) * 8) / i2;
+    var kolonav = (kol_losh * 6) / i2 + oboz2;
+
+    if (oboz2 < 0) {
+        oboz2 = 0;
+    }
+
+    return [kol_losh, kolonav, ves3, oboz2];
+}
+
+function mongol(kol_vo, i2) {
+    var kol_losh = kol_vo * 3;
+
+    var ves3 = (prc(kol_losh, 90) * 6 + kol_vo + prc(kol_losh, 10) * 8);
+    var ves = ves3 * i2;
+    var oboz1 = 0;
+    var ves1 = ves - kol_losh * 20;
+    var obozl = oboz1 + (oboz1 - ves1 / 500) * -1;
+    var oboz2 = ((ves1 / 500) * 8) / i2;
+    var kolonav = (kol_losh * 6) / i2 + oboz2;
+
+    if (oboz2 < 0) {
+        oboz2 = 0;
+    }
+
+    return [kol_losh, kolonav, ves3, oboz2];
+}
+
+function rusich(kol_vo, i2) {
+    var kol_losh = kol_vo * 3;
+
+    var ves3 = (prc(kol_losh, 90) * 6 + kol_vo + prc(kol_losh, 40) * 6);
+    var ves = ves3 * i2;
+    var oboz1 = 0;
+    var ves1 = ves - kol_losh * 20;
+    var obozl = oboz1 + (oboz1 - ves1 / 500) * -1;
+    var oboz2 = ((ves1 / 500) * 8) / i2;
+    var kolonav = (kol_losh * 6) / i2 + oboz2;
+
+    if (oboz2 < 0) {
+        oboz2 = 0;
+    }
+
+    return [kol_losh, kolonav, ves3, oboz2];
+}
+
+
+function nero(v1, v2, v3) {
+    // Формируем данные для отправки
+    const data = {
+        v1: v1,
+        v2: v2,
+        v3: v3
+    };
+
+    // Опции для AJAX-запроса
+    const options = {
+        method: 'POST', // или 'GET', в зависимости от вашего Django-представления
+        headers: {
+            'Content-Type': 'application/json',
+            "X-CSRFToken": "{{ csrf_token }}",
+            // Добавьте другие необходимые заголовки, если это необходимо
+        },
+        body: JSON.stringify(data), // Преобразуем данные в JSON-строку
+    };
+
+    // Отправляем AJAX-запрос
+    return fetch('json_poteri', options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Возвращаем JSON-объект
+        })
+        .then(data => {
+            // Возвращаем значение из ответа
+            global_nero = parseFloat(data.result_nero)*3;
+            return parseFloat(data.result_nero); // Замените 'result' на имя вашего поля в ответе
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+
+
+function podschot(kol_vo, den, mans, tipm) {
+    kol_vo = parseInt(kol_vo);
+    den = parseInt(den);
+    tipm1 = parseFloat('0.' + tipm);
+    mesac1 = parseFloat('0.' + mans);
+
+    for (var i = 0; i < den; i++) {
+        nero(tipm1, mesac1, den2{{ forloop.counter }});
+        console.log(global_nero)
+        kol_vo = (kol_vo - prc(kol_vo, global_nero));
+    }
+
+    return Math.round(kol_vo);
+
+}
+
+
+function func5{{ forloop.counter }}(event) {
+    osnova{{ forloop.counter }}(event, 5);
+    tabl{{ forloop.counter }}(event);
+    count_dey(event);
+
+}
+function func30{{ forloop.counter }}(event) {
+    osnova{{ forloop.counter }}(event, 30);
+    tabl{{ forloop.counter }}(event);
+    count_dey(event);
+}
+
+function funca{{ forloop.counter }}(event) {
+    var value = parseInt(document.getElementById('plusaf{{ forloop.counter }}').value);
+    osnova{{ forloop.counter }}(event, value);
+    document.getElementById('plusaf{{ forloop.counter }}').value = '';
+}
+
+function funca1{{ forloop.counter }}(event) {
+    var kol_vo = parseInt(document.getElementById('chis{{ forloop.counter }}').value);
+    var n = parseInt(document.getElementById('dobav{{ forloop.counter }}').value);
+    document.getElementById('chis{{ forloop.counter }}').value = kol_vo + n;
+    document.getElementById('dobav{{ forloop.counter }}').value = '';
+}
+
+function osnova{{ forloop.counter }}(event, par) {
+    var tipm = document.getElementById('mesto{{ forloop.counter }}').value;
+    var mans = document.getElementById('nach{{ forloop.counter }}').value;
+    var kol_vo = document.getElementById('chis{{ forloop.counter }}').value;
+    var den = par;
+
+    den2{{ forloop.counter }} = den2{{ forloop.counter }} + par;
+    den1 = den1 + par;
+
+    if (den1 == 30) {
+        den1 = 0;
+        var mas_pr = parseInt(document.getElementById('nach{{ forloop.counter }}').value) + 1;
+        if (mas_pr == 13) {
+            mas_pr = 1;
+        }
+        document.getElementById('nach{{ forloop.counter }}').value = mas_pr;
+    }
+
+    if (den1 > 30) {
+        den1 = 30 - den1;
+        var mas_pr = parseInt(document.getElementById('nach{{ forloop.counter }}').value) + 1;
+        if (mas_pr == 13) {
+            mas_pr = 1;
+        }
+        document.getElementById('nach{{ forloop.counter }}').value = mas_pr;
+    }
+
+    kol_vo = podschot(kol_vo, den, mans, tipm);
+    document.getElementById('chis{{ forloop.counter }}').value = kol_vo;
+}
+
+function tabl{{ forloop.counter }}(event) {
+    var kol_vo = parseFloat(document.getElementById('chis{{ forloop.counter }}').value);
+    var i2 = parseFloat(document.getElementById('dey{{ forloop.counter }}').value);
+    var result = {{tape}}(kol_vo, i2); 
+
+    var loshad = result[0];
+    var kolonav = result[1];
+    var ves = result[2];
+    var oboz = result[3];
+
+    document.getElementById('lochad{{ forloop.counter }}').innerHTML = Math.round(loshad);
+    var i1 = parseFloat(document.getElementById('kolona{{ forloop.counter }}').value);
+    document.getElementById('kolonav{{ forloop.counter }}').innerHTML = (Math.round((kolonav / i1) / 1000 * 10) / 10) + ' км';
+    document.getElementById('ves{{ forloop.counter }}').innerHTML = (Math.round(ves / 1000 * 10) / 10) + ' т';
+    document.getElementById('oboz{{ forloop.counter }}').innerHTML = (Math.round((oboz / i1) / 1000 * 10) / 10) + ' км';
+    count_dey(event)
+    document.getElementById('dey_counts{{ forloop.counter }}').innerHTML = den2{{ forloop.counter }};
+}
+
+function minus{{ forloop.counter }}(event) {
+    var a = parseInt(document.getElementById('mininp{{ forloop.counter }}').value);
+    document.getElementById('mininp{{ forloop.counter }}').value = '';
+
+    var b = parseInt(document.getElementById('chis{{ forloop.counter }}').value);
+    document.getElementById('chis{{ forloop.counter }}').value = b - a;
+}
+
+document.getElementById('minb{{ forloop.counter }}').addEventListener('click', minus{{ forloop.counter }});
+document.getElementById('plus5{{ forloop.counter }}').addEventListener('click', func5{{ forloop.counter }});
+document.getElementById('plus30{{ forloop.counter }}').addEventListener('click', func30{{ forloop.counter }});
+document.getElementById('plusa{{ forloop.counter }}').addEventListener('click', funca{{ forloop.counter }});
+document.getElementById('plusa1{{ forloop.counter }}').addEventListener('click', funca1{{ forloop.counter }});
+
+document.getElementById('box{{ forloop.counter }}').addEventListener('click', tabl{{ forloop.counter }});
+</script>
+
+ </div>
+
+{%endfor%}
+</div>
+
+<div class="b2" >
+  <form action="#">
+      <input type="text" id="chis_summ" oninput="this.value = this.value.replace(/\D/g, '')" value="0" style="font-size: 32pt; color: #aa862e;" size="6" class = "inpu1" >
+ </form>   
+
+ <div class="buttonblock" id="blok-sum">
+
+    <button class="forma_button" id="plus5_summ">+5</button>
+    <button class="forma_button" id="plus30_summ">+30</button>
+    <input type="text" id="plusaf_summ" size="3" name="" oninput="this.value = this.value.replace(/\D/g, '')" class = "inpu1">
+    <button  class="forma_button" id="plusa_summ">+a</button>
+    <br>
+    <p id="dey_count">Пройшло 0 діб</p><button class="forma_button" id="deynull">Зкинути кількість діб</button>
+
+    <br><br>
+    <p><b>Зверніть увагу:</b></p>
+    <div style="overflow: hidden; margin-right: 15px;">
+<ul style="margin-left: 30px;">
+<li>довжина колони не повинна перебільшувати 20 - 30 км, тому що вона в цюму випадку стане не керованою;</li>
+<li>запас фуражу повинен складати не менше 7 - 10 діб автономності війска, а якщо дії відбуваються на теріторіях з низькою щільністю населення, то набагато більше;</li>
+<li>не забувайте змінювати климатичні зони, під час моделювання походу.</li>
+</ul>
+</div>
+    <br>
+    <p>Мапа климатичних зон Європи</p>
+    <a href="/static/base/img/karta.jpg" target="_blank"><img src="/static/base/img/karta.jpg" style="width: 100%; margin-top: 10px;"></div><a>
+
+    
+
+    </div>
+</div>
+
+<script>
+summ_pot = 0
+function summ(event){  
+    summ_pot = {% for i in kol_potok %}parseInt(document.getElementById('chis{{ forloop.counter }}').value) + {%endfor%} 0
+    document.getElementById('chis_summ').value = summ_pot
+}
+
+function count_dey(event){
+    document.getElementById('dey_count').innerHTML = 'Пройшло ' + Math.max(...[{% for i in kol_potok %} parseFloat(den2{{ forloop.counter }}), {%endfor%} 0])+ ' діб';} 
+
+document.getElementById('osnova5').addEventListener('click', summ)
+document.getElementById('blok-sum').addEventListener('click', summ)
+document.getElementById('blok-sum').addEventListener('click', count_dey)
+{% for i in kol_potok %}
+document.getElementById('plus5_summ').addEventListener('click', function() { setTimeout(func5{{ forloop.counter }}, ({{ forloop.counter }}-1)*2);})
+document.getElementById('plus30_summ').addEventListener('click', function() { setTimeout(func30{{ forloop.counter }}, ({{ forloop.counter }}-1)*10);})
+document.getElementById('plusa_summ').addEventListener('click', funca);
+
+{%endfor%} 
+
+
+function funca(event) {
+    var value = parseInt(document.getElementById('plusaf_summ').value);
+    {% for i in kol_potok %}
+    osnova{{ forloop.counter }}(event, value);
+    tabl{{ forloop.counter }}(event);
+    {%endfor%} 
+    document.getElementById('plusaf_summ').value = '';
+}
+document.getElementById('deynull').addEventListener('click', deynull)
+function deynull(event){
+    {% for i in kol_potok %}
+    den2{{ forloop.counter }} = 0
+    tabl{{ forloop.counter }}(event);
+    {%endfor%} 
+}
+
+function submitForm() {
+}
+document.getElementById('poteri_form').addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) {
+            // Если нажата клавиша Enter, вызываем submitForm и предотвращаем отправку формы
+            submitForm();
+            e.preventDefault();
+        }
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Підрохунок не бойових втрат{% endblock %}
+
+
+{% block content %}
+<div class="b1">
+<form method="POST" action="{% url 'poteri:zadacha' %}"> 
+	{% csrf_token %}
+<div class="text_form">Армія на марші поділилася на 
+<select name = "kol_potok" class = "inpu1" class="text_form">
+    <option value="1" selected>1</option>
+    <option value="2" >2</option>
+    <option value="3" >3</option>
+    <option value="4" >4</option>
+   </select> 
+ потока</div><br>
+<div>Тип армии </div>
+   <select name = "name_voi" class = "inpu1" class="text_form">
+    <option value="1" selected>Європейська лицарська армія</option>
+    <option value="2" >Монгольська армія</option>
+    <option value="3" >Роське лицарське військо</option>
+   </select> 
+
+   <br><br>
+<button  class="forma_button" tupe = "submit">далі</button>
+</form>
+
+</div>
+<div class="b2">
+<div id = "summa"></div>
+
+<p id="kol-vo"></p>
+<p> </p>
+<p></p>
+<p></p>
+</div>
+
+{% endblock %}
